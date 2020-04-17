@@ -5,12 +5,14 @@ class InputCurrency extends StatelessWidget {
   final size;
   final String labelText;
   final String prefixText;
+  final Function function;
 
   InputCurrency({
     @required this.currencyController,
     @required this.size,
     @required this.prefixText,
     @required this.labelText,
+    @required this.function,
   });
 
   @override
@@ -21,6 +23,7 @@ class InputCurrency extends StatelessWidget {
         vertical: size.height * 0.01,
       ),
       child: TextField(
+        onChanged: function,
         controller: currencyController,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
